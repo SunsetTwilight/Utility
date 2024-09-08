@@ -1,0 +1,9 @@
+.vs
+.git
+/Debug
+/Utility/Debug
+/Release
+/Utility/Release
+/Bin
+/Utility/Bin
+

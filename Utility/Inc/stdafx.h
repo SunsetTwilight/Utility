@@ -1,0 +1,12 @@
+#ifndef _STDAFX
+#define _STDAFX
+
+#include <cmath>
+
+
+#define UTL_PI				3.1415927410125732421875f //Pi
+
+#define UTL_DEG_RAD			0.01745329238474369049072265625f //Pi / 180.0
+#define UTL_DEG_RAD_HALF	0.008726646192371845245361328125f //Pi / 180.0 / 2
+
+#endif // !_STDAFX
