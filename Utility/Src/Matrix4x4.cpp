@@ -3,7 +3,13 @@
 #include "Vector3.h"
 #include "Quaternion.h"
 
-namespace Utility
+//#include <stdafx.h> (Precompiled header files)
+
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Vector4::data[4] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	const Matrix4x4 Matrix4x4::identity
 	(
@@ -20,7 +26,7 @@ namespace Utility
 		0.0f, 0.0f, 0.0f, 0.0f
 	);
 
-	
+
 
 
 	const Vector4 Matrix4x4::GetColumn(size_t i) const
@@ -39,7 +45,7 @@ namespace Utility
 		_31(0.0f), _32(0.0f), _33(0.0f), _34(0.0f),
 		_41(0.0f), _42(0.0f), _43(0.0f), _44(0.0f)
 	{
-		
+
 	}
 
 	Matrix4x4::Matrix4x4(const Vector4& v4_0, const Vector4& v4_1, const Vector4& v4_2, const Vector4& v4_3)
@@ -166,7 +172,7 @@ namespace Utility
 		Matrix4x4 matPos = Matrix4x4::identity;
 
 		matScr._11 = s.x;
-		matScr._22 = s.y; 
+		matScr._22 = s.y;
 		matScr._33 = s.z;
 
 		matPos._14 = p.x;
@@ -221,5 +227,7 @@ namespace Utility
 			0.0f, 0.0f, 0.0f, 1.0f
 		);
 	}
-
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化

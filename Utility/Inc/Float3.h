@@ -1,7 +1,13 @@
 #ifndef _FLOAT3
 #define _FLOAT3
 
-namespace Utility
+//#include <stdafx.h> (Precompiled header files)
+
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Float3::i[3] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	class Float3
 	{
@@ -15,6 +21,11 @@ namespace Utility
 				float z;
 			};
 			float i[3];
+			/*
+				&(i[0]) = (&)x
+				&(i[1]) = (&)y
+				&(i[2]) = (&)z
+			*/
 		};
 
 	public:
@@ -35,5 +46,8 @@ namespace Utility
 		Float3& operator/=(const Float3& f4) { x /= f4.x; y /= f4.y; z /= f4.z; return *this; }
 	};
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化
 
 #endif // !_FLOAT3

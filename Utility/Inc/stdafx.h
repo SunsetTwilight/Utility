@@ -1,6 +1,9 @@
 #ifndef _STDAFX
 #define _STDAFX
 
+
+#define NAMESPACE_UTILITY  namespace Utility
+
 #include <cmath>
 
 

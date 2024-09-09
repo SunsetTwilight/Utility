@@ -3,7 +3,7 @@
 
 #include "Vector4.h"
 
-namespace Utility
+NAMESPACE_UTILITY
 {
 	class Vector3;
 	class Vector4;

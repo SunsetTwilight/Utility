@@ -1,7 +1,13 @@
 #ifndef _QUATERNION
 #define _QUATERNION
 
-namespace Utility
+//#include <stdafx.h> (Precompiled header files)
+
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Vector4::data[4] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	class Vector3;
 	class Matrix4x4;
@@ -19,6 +25,12 @@ namespace Utility
 				float z;
 			};
 			float data[4];
+			/*
+				&(data[0]) = (&)x
+				&(data[1]) = (&)y
+				&(data[2]) = (&)z
+				&(data[3]) = (&)w
+			*/
 		};
 
 	public:
@@ -38,7 +50,7 @@ namespace Utility
 
 		static const Quaternion AngleAxiz(const float& angle, const Vector3& axiz);
 		static const float Dot(const Quaternion& q1, const Quaternion& q2);
-		
+
 		// The order of rotation is 'Z' 'X' 'Y'
 		static const Quaternion ConvertFromEular(const float& x, const float& y, const float& z);
 
@@ -46,5 +58,8 @@ namespace Utility
 
 	};
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化
 
 #endif // !_QUATERNION

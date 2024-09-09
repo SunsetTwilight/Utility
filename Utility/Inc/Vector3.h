@@ -1,7 +1,13 @@
 #ifndef _VECTOR3
 #define _VECTOR3
 
-namespace Utility
+//#include <stdafx.h> (Precompiled header files)
+
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Vector3::data[3] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	class Float3;
 
@@ -17,6 +23,11 @@ namespace Utility
 				float z;
 			};
 			float data[3];
+			/*
+				&(data[0]) = (&)x
+				&(data[1]) = (&)y
+				&(data[2]) = (&)z
+			*/
 		};
 
 		const float magnitude() const;
@@ -43,7 +54,7 @@ namespace Utility
 		Vector3(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
 
 		Vector3& operator=(const Vector3& v3) { x = v3.x; y = v3.y; z = v3.z; return *this; }
-		
+
 		float& operator[](size_t i) { return data[i % 3]; }
 
 		const Vector3 operator+(const Vector3& v3) const { return Vector3(x + v3.x, y + v3.y, z + v3.z); }
@@ -72,6 +83,9 @@ namespace Utility
 		static const Vector3 Scale(const Vector3& vec3_0, const Vector3& vec3_1);
 	};
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化
 
 #endif // !_VECTOR3
 

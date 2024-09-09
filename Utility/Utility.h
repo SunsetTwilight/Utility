@@ -1,10 +1,7 @@
 #ifndef _UTILITY
 #define _UTILITY
 
-namespace Utility
-{
-
-}
+NAMESPACE_UTILITY {}
 
 #include "Inc/Int2.h"
 #include "Inc/Int3.h"

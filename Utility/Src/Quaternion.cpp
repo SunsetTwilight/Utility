@@ -3,7 +3,11 @@
 #include "Vector3.h"
 #include "Matrix4x4.h"
 
-namespace Utility
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Vector4::data[4] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	const Quaternion Quaternion::identity(1.0f, 0.0f, 0.0f, 0.0f);
 	const Quaternion Quaternion::zero(0.0f, 0.0f, 0.0f, 0.0f);
@@ -35,7 +39,7 @@ namespace Utility
 
 		float rad = angle * UTL_DEG_RAD_HALF;
 		float s = std::sinf(rad);
-		
+
 		return Quaternion
 		(
 			std::cosf(rad),
@@ -78,5 +82,7 @@ namespace Utility
 	{
 		return Quaternion(matrix._11,0,0,0);
 	}
-	
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化

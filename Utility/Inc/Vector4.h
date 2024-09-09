@@ -1,12 +1,19 @@
 #ifndef _VECTOR4
 #define _VECTOR4
 
-namespace Utility
+//#include <stdafx.h> (Precompiled header files)
+
+#pragma warning( push )
+#pragma warning( disable : 26495 ) 
+//Vector4::data[4] に対する警告：C26495(メンバ変数は必ず初期化してください) 無効化
+
+NAMESPACE_UTILITY
 {
 	class Vector4
 	{
 	public:
 		union
+
 		{
 			struct
 			{
@@ -16,6 +23,12 @@ namespace Utility
 				float w;
 			};
 			float data[4];
+			/*
+				&(data[0]) = (&)x
+				&(data[1]) = (&)y
+				&(data[2]) = (&)z
+				&(data[3]) = (&)w
+			*/
 		};
 
 		const float magnitude() const;
@@ -33,9 +46,9 @@ namespace Utility
 
 		Vector4() : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {}
 
-		Vector4(float _x, float _y)						: x(_x), y(_y), z(0.0f), w(0.0f) {}
-		Vector4(float _x, float _y, float _z)			: x(_x), y(_y), z(_z),	 w(0.0f) {}
-		Vector4(float _x, float _y, float _z, float _w) : x(_x), y(_y), z(_z),	 w(_w)	 {}
+		Vector4(float _x, float _y) : x(_x), y(_y), z(0.0f), w(0.0f) {}
+		Vector4(float _x, float _y, float _z) : x(_x), y(_y), z(_z),	 w(0.0f) {}
+		Vector4(float _x, float _y, float _z, float _w) : x(_x), y(_y), z(_z),	 w(_w) {}
 
 		Vector4& operator=(const Vector4& v4) { x = v4.x; y = v4.y; z = v4.z; w = v4.w; return *this; }
 
@@ -59,7 +72,12 @@ namespace Utility
 		static const Vector4 Max(const Vector4& vec4_0, const Vector4& vec4_1);
 		static const Vector4 Min(const Vector4& vec4_0, const Vector4& vec4_1);
 		static const Vector4 Scale(const Vector4& vec4_0, const Vector4& vec4_1);
-		
+
 	};
+
 }
+
+#pragma warning( pop )
+//警告C26495(メンバ変数は必ず初期化してください) 有効化
+
 #endif // !_VECTOR4
