@@ -33,7 +33,7 @@ NAMESPACE_UTILITY
 		);
 	}
 
-	const Quaternion Quaternion::AngleAxiz(const float& angle, const Vector3& axiz)
+	inline const Quaternion Quaternion::AngleAxiz(const float& angle, const Vector3& axiz)
 	{
 		Vector3 normal = axiz.normalized();
 
@@ -48,13 +48,13 @@ NAMESPACE_UTILITY
 			normal.z * s
 		);
 	}
-	const float Quaternion::Dot(const Quaternion& q1, const Quaternion& q2)
+	inline const float Quaternion::Dot(const Quaternion& q1, const Quaternion& q2)
 	{
 		return q1.x * q2.x + q1.y * q2.y + q1.z * q2.z + q1.w * q2.w;
 	}
 
 	// The order of rotation is 'Z' 'X' 'Y'
-	const Quaternion Quaternion::ConvertFromEular(const float& x, const float& y, const float& z)
+	inline const Quaternion Quaternion::ConvertFromEular(const float& x, const float& y, const float& z)
 	{
 		Quaternion qx(
 			std::cosf(x * UTL_DEG_RAD_HALF),
@@ -78,7 +78,7 @@ NAMESPACE_UTILITY
 		return qz * qx * qy;
 	}
 
-	const Quaternion Quaternion::ConvertFromMatrix(const Matrix4x4& matrix)
+	inline const Quaternion Quaternion::ConvertFromMatrix(const Matrix4x4& matrix)
 	{
 		return Quaternion(matrix._11,0,0,0);
 	}

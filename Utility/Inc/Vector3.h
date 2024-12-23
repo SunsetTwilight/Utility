@@ -30,10 +30,10 @@ NAMESPACE_UTILITY
 			*/
 		};
 
-		const float magnitude() const;
-		const Vector3 normalized() const;
-		const float sqrMagnitude() const;
-		const Vector3 inverse() const;
+		inline const float magnitude() const;
+		inline const Vector3 normalized() const;
+		inline const float sqrMagnitude() const;
+		inline const Vector3 inverse() const;
 
 		void Set(float _x, float _y, float _z);
 
@@ -70,17 +70,17 @@ NAMESPACE_UTILITY
 		const bool operator== (const Vector3& v3) const { return x == v3.x && y == v3.y && z == v3.z ? true : false; }
 		const bool operator!= (const Vector3& v3) const { return x == v3.x && y == v3.y && z == v3.z ? false : true; }
 
-		static const float Magnitude(const Vector3& vec3);
-		static const Vector3 Inverse(const Vector3& vec3);
+		inline static const float Magnitude(const Vector3& vec3);
+		inline static const Vector3 Inverse(const Vector3& vec3);
 
-		static const float Angle(const Vector3& from, const Vector3& to);
-		static const Vector3 Cross(const Vector3& vec3_0, const Vector3& vec3_1);
-		static const float Distance(const Vector3& vec3_0, const Vector3& vec3_1);
-		static const float Dot(const Vector3& vec3_0, const Vector3& vec3_1);
-		static const Vector3 Max(const Vector3& vec3_0, const Vector3& vec3_1);
-		static const Vector3 Min(const Vector3& vec3_0, const Vector3& vec3_1);
-		static const Vector3 Reflect(const Vector3& inDirection, const Vector3& inNormal);
-		static const Vector3 Scale(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const float Angle(const Vector3& from, const Vector3& to);
+		inline static const Vector3 Cross(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const float Distance(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const float Dot(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const Vector3 Max(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const Vector3 Min(const Vector3& vec3_0, const Vector3& vec3_1);
+		inline static const Vector3 Reflect(const Vector3& inDirection, const Vector3& inNormal);
+		inline static const Vector3 Scale(const Vector3& vec3_0, const Vector3& vec3_1);
 	};
 }
 

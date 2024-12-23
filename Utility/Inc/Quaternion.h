@@ -48,13 +48,13 @@ NAMESPACE_UTILITY
 		const Quaternion operator-(const Quaternion& quat) const;
 		const Quaternion operator*(const Quaternion& quat) const;
 
-		static const Quaternion AngleAxiz(const float& angle, const Vector3& axiz);
-		static const float Dot(const Quaternion& q1, const Quaternion& q2);
+		inline static const Quaternion AngleAxiz(const float& angle, const Vector3& axiz);
+		inline static const float Dot(const Quaternion& q1, const Quaternion& q2);
 
 		// The order of rotation is 'Z' 'X' 'Y'
-		static const Quaternion ConvertFromEular(const float& x, const float& y, const float& z);
+		inline static const Quaternion ConvertFromEular(const float& x, const float& y, const float& z);
 
-		static const Quaternion ConvertFromMatrix(const Matrix4x4& matrix);
+		inline static const Quaternion ConvertFromMatrix(const Matrix4x4& matrix);
 
 	};
 }

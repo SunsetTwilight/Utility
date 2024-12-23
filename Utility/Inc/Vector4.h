@@ -31,12 +31,12 @@ NAMESPACE_UTILITY
 			*/
 		};
 
-		const float magnitude() const;
-		const Vector4 normalized() const;
-		const float sqrMagnitude() const;
-		const Vector4 inverse() const;
+		inline const float magnitude() const;
+		inline const Vector4 normalized() const;
+		inline const float sqrMagnitude() const;
+		inline const Vector4 inverse() const;
 
-		void Set(float _x, float _y, float _z, float _w);
+		inline void Set(float _x, float _y, float _z, float _w);
 
 	public:
 		static Vector4 one;
@@ -67,11 +67,11 @@ NAMESPACE_UTILITY
 		const bool operator== (const Vector4& v4) const { return x == v4.x && y == v4.y && z == v4.z && w == v4.w ? true : false; }
 		const bool operator!= (const Vector4& v4) const { return x == v4.x && y == v4.y && z == v4.z && w == v4.w ? false : true; }
 
-		static const float Distance(const Vector4& vec4_0, const Vector4& vec4_1);
-		static const float Dot(const Vector4& vec4_0, const Vector4& vec4_1);
-		static const Vector4 Max(const Vector4& vec4_0, const Vector4& vec4_1);
-		static const Vector4 Min(const Vector4& vec4_0, const Vector4& vec4_1);
-		static const Vector4 Scale(const Vector4& vec4_0, const Vector4& vec4_1);
+		inline static const float Distance(const Vector4& vec4_0, const Vector4& vec4_1);
+		inline static const float Dot(const Vector4& vec4_0, const Vector4& vec4_1);
+		inline static const Vector4 Max(const Vector4& vec4_0, const Vector4& vec4_1);
+		inline static const Vector4 Min(const Vector4& vec4_0, const Vector4& vec4_1);
+		inline static const Vector4 Scale(const Vector4& vec4_0, const Vector4& vec4_1);
 
 	};
 
